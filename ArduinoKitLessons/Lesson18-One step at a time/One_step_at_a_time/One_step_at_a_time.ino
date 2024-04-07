@@ -15,6 +15,7 @@ void setup() {
   // initialize the serial port:
   Serial.begin(9600);
 }
+
 void loop() {
   // step one step:
   myStepper.step(1);

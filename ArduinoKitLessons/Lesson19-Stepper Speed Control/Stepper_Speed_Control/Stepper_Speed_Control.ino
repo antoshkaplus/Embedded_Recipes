@@ -9,9 +9,11 @@ const int stepsPerRevolution = 200;  // change this to fit the number of steps p
 // initialize the stepper library on pins 8 through 11:
 Stepper myStepper(stepsPerRevolution, 2, 3, 4, 5);
 int stepCount = 0;  // number of steps the motor has taken
+
 void setup() {
   // nothing to do inside the setup
 }
+
 void loop() {
   // read the sensor value:
   int sensorReading = analogRead(A0);

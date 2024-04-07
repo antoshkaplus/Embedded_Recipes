@@ -3,6 +3,8 @@
  * IDE V1.6.9
  * Email:support@miuzeipro.com
  */
+
+// digit => pin => bit set or not.
 int a[10][10]={
                {0,0,0,1,1,1,0,1,1,1},  //0
                {0,0,0,1,0,0,0,0,0,1},  //1
@@ -19,11 +21,16 @@ void setup(){
     pinMode(i,OUTPUT);  
   }  
 }  
+
 void printf(int v){  
-  for (int i=3;i<=9;i++){  
+  for (int i=3;i<=9;i++){ 
+    // For each pin output if bit is or not
+    // based on predefined matrix. 
     digitalWrite(i,a[v][i]);  
   }  
-}  
+}
+
+// Cycle over digits.
 void loop(){  
   for (int i=0;i<=9;i++){  
     printf(i);  

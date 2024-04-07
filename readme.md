@@ -29,8 +29,20 @@ Replace `ttyUSB0` with your port name, could be `ttyACM0`.
 Link: https://askubuntu.com/questions/1056314/uploading-code-to-arduino-gives-me-the-error-avrdude-ser-open-cant-open-d
 
 
+## LED
+* Looks like along with LOW and HIGH digital pin can take values 0 - 255.
+* LED short leg is minus
+* Short leg should go to the ground
+* Long leg goes to numbered digital pin.
+* Placing the resistor on the positive (anode) side of the resistor will have no differing effects from placing the resistor on the negative (cathode) side of the LED. 
+  So don't sweat it, just pick a side!
+
+## Resistors
+* My resistors are exposed. Make sure nothing touches wire leads, otherwise may not work as expected.
 * Color to resistance: https://www.digikey.com/en/resources/conversion-calculators/conversion-calculator-resistor-color-code-5-band
-* LED short is minus
+
+
+
 
 ## Commands:
 * initialize the digital pin as an output.
@@ -45,3 +57,6 @@ Link: https://askubuntu.com/questions/1056314/uploading-code-to-arduino-gives-me
 ```sensorValue = analogRead(sensorPin);```
 * print to serial monitor:
 `Serial.println(sensorValue);`
+* `analogRead({pin number})` - reads the value from the specified analog pin. 
+  Arduino boards contain a multichannel, 10-bit analog to digital converter.
+  That means values range: 0 - 1023.
